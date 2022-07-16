@@ -30,7 +30,6 @@ import java.util.List;
 /**
  * Block metadata stored in the footer and passed in an InputSplit
  */
-@ToString
 @AllArgsConstructor
 public class BlockMetaData implements Serializable {
 
@@ -111,6 +110,6 @@ public class BlockMetaData implements Serializable {
 
   @Override
   public String toString() {
-    return "BlockMetaData{" + rowCount + ", " + totalByteSize + " " + columns + "}";
+    return "BlockMetaData{\n" + rowCount + ", " + totalByteSize + " " + columns + "\n}";
   }
 }

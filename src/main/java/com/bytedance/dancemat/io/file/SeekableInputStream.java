@@ -26,7 +26,7 @@ import java.nio.ByteBuffer;
 
 /**
  * {@code SeekableInputStream} is an interface with the methods needed by
- * Parquet to read data from a file or Hadoop data stream.
+ * Dancemat to read data from a file or Hadoop data stream.
  */
 public abstract class SeekableInputStream extends InputStream {
 

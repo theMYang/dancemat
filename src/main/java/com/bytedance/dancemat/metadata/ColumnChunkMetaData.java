@@ -27,7 +27,6 @@ import java.io.Serializable;
 /**
  * Column meta data for a block stored in the file footer and passed in the InputSplit
  */
-@ToString
 @Getter
 public class ColumnChunkMetaData implements Serializable {
 
@@ -82,5 +81,16 @@ public class ColumnChunkMetaData implements Serializable {
 
   public long getTotalSize() {
     return totalSize;
+  }
+
+  @Override
+  public String toString() {
+    return "\nColumnChunkMetaData{" +
+        "\ntype=" + type +
+        "\npath='" + path + '\'' +
+        "\nfirstDataPage=" + firstDataPage +
+        "\nvalueCount=" + valueCount +
+        "\ntotalSize=" + totalSize +
+        "\n}";
   }
 }

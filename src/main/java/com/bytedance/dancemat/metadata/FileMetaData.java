@@ -50,6 +50,6 @@ public final class FileMetaData implements Serializable {
 
   @Override
   public String toString() {
-    return "FileMetaData{schema: "+schema+ "}";
+    return "FileMetaData{\nschema: "+schema+ "\n}";
   }
 }

@@ -20,7 +20,7 @@ package com.bytedance.dancemat.Record;
 
 /**
  * Top-level class which should be implemented in order to materialize objects from
- * a stream of Parquet data.
+ * a stream of Dancemat data.
  * 
  * Each record will be wrapped by {@link RecordConverter#start()} and {@link RecordConverter#end()},
  * between which the appropriate fields will be materialized.

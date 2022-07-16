@@ -22,7 +22,7 @@ package com.bytedance.dancemat.io.file;
 import java.io.IOException;
 
 /**
- * {@code InputFile} is an interface with the methods needed by Parquet to read
+ * {@code InputFile} is an interface with the methods to read
  * data files using {@link SeekableInputStream} instances.
  */
 public interface InputFile {

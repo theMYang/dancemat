@@ -76,8 +76,6 @@ public class HadoopSeekableInputStream extends SeekableInputStream {
       int readCount = stream.read(buffer);
       buf.put(buffer, 0, readCount);
       if (readCount == -1) {
-        // this is probably a bug in the ParquetReader. We shouldn't have called readFully with a buffer
-        // that has more remaining than the amount of data in the stream.
         throw new EOFException("Reached the end of stream. Still have: " + buf.remaining() + " bytes left");
       }
     }

@@ -9,14 +9,6 @@ import java.util.Map;
 
 public class ReadSupport<T> {
   public static final String DANCEMAT_READ_SCHEMA = "dancemat.read.schema";
-
-  private ReadSupport<T> readSupport;
-  private Iterator<InputFile> filesIterator;
-//  private final ReadSupport<T> readSupport;
-//  private final Iterator<InputFile> filesIterator;
-//  private InternalParquetRecordReader<T> reader;
-  private MessageType fileSchema;
-
   public ReadContext init(Configuration conf, MessageType fileSchema) {
     throw new UnsupportedOperationException("Override init(InitContext)");
   }

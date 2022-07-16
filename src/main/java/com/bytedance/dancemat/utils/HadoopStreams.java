@@ -30,12 +30,11 @@ import java.io.IOException;
 import java.util.Objects;
 
 /**
- * Convenience methods to get Parquet abstractions for Hadoop data streams.
+ * Convenience methods to get Hadoop data streams.
  */
 public class HadoopStreams {
   /**
    * Wraps a {@link FSDataInputStream} in a {@link SeekableInputStream}
-   * implementation for Parquet readers.
    *
    * @param stream a Hadoop FSDataInputStream
    * @return a SeekableInputStream

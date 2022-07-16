@@ -47,9 +47,6 @@ import java.util.Map;
 
 import static com.bytedance.dancemat.io.file.DancematFileWriter.MAGIC;
 
-/**
- * Internal implementation of the Parquet file reader as a block container
- */
 public class DancematFileReader implements Closeable {
 
   private static final Logger LOG = LoggerFactory.getLogger(DancematFileReader.class);
@@ -61,7 +58,7 @@ public class DancematFileReader implements Closeable {
   /**
    * @param conf a configuration
    * @param file a file path to open
-   * @return a parquet file reader
+   * @return a file reader
    * @throws IOException if there is an error while opening the file
    */
   public static DancematFileReader open(Configuration conf, Path file) throws IOException {
@@ -99,7 +96,7 @@ public class DancematFileReader implements Closeable {
     LOG.debug("File length {}", fileLen);
     int FOOTER_LENGTH_SIZE = 4;
     if (fileLen < MAGIC.length + FOOTER_LENGTH_SIZE + MAGIC.length) { // MAGIC + data + footer + footerIndex + MAGIC
-      throw new RuntimeException(filePath + " is not a Parquet file (too small length: " + fileLen + ")");
+      throw new RuntimeException(filePath + " is not a Dancemat file (too small length: " + fileLen + ")");
     }
     long footerLengthIndex = fileLen - FOOTER_LENGTH_SIZE - MAGIC.length;
     LOG.debug("reading footer index at {}", footerLengthIndex);
@@ -109,7 +106,7 @@ public class DancematFileReader implements Closeable {
     byte[] magic = new byte[MAGIC.length];
     f.readFully(magic);
     if (!Arrays.equals(MAGIC, magic)) {
-      throw new RuntimeException(filePath + " is not a Parquet file. expected magic number at tail " + Arrays.toString(MAGIC) + " but found " + Arrays.toString(magic));
+      throw new RuntimeException(filePath + " is not a Dancemat file. expected magic number at tail " + Arrays.toString(MAGIC) + " but found " + Arrays.toString(magic));
     }
     long footerIndex = footerLengthIndex - footerLength;
     LOG.debug("read footer length: {}, footer index: {}", footerLength, footerIndex);

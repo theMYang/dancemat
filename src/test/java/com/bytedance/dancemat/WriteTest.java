@@ -17,7 +17,7 @@ public class WriteTest {
   @Test
   public void test() throws Exception {
     Configuration conf = new Configuration();
-    Path root = new Path("target/tests/TestParquetWriter/");
+    Path root = new Path("target/tests/TestDancemat/");
     TestUtils.enforceEmptyDir(conf, root);
     MessageType schema = SchemaParser.parseSchema(
         "message test { "

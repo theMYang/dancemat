@@ -1,4 +1,4 @@
-/* 
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -6,9 +6,9 @@
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing,
  * software distributed under the License is distributed on an
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -27,15 +27,13 @@ import java.util.List;
  * Meta Data block stored in the footer of the file
  * contains file level (Codec, Schema, ...) and block level (location, columns, record count, ...) meta data
  */
-@ToString
 public class DancematMetadata implements Serializable {
   private final FileMetaData fileMetaData;
   private final List<BlockMetaData> blocks;
 
   /**
-   *
    * @param fileMetaData file level metadata
-   * @param blocks block level metadata
+   * @param blocks       block level metadata
    */
   public DancematMetadata(FileMetaData fileMetaData, List<BlockMetaData> blocks) {
     this.fileMetaData = fileMetaData;
@@ -43,7 +41,6 @@ public class DancematMetadata implements Serializable {
   }
 
   /**
-   *
    * @return block level metadata
    */
   public List<BlockMetaData> getBlocks() {
@@ -51,7 +48,6 @@ public class DancematMetadata implements Serializable {
   }
 
   /**
-   *
    * @return file level meta data
    */
   public FileMetaData getFileMetaData() {
@@ -61,7 +57,7 @@ public class DancematMetadata implements Serializable {
 
   @Override
   public String toString() {
-    return "ParquetMetaData{"+fileMetaData+", blocks: "+blocks+"}";
+    return "DancematMetadata{\n" + fileMetaData + " \nblocks: " + blocks + "\n}";
   }
 
 }
